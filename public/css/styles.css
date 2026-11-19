@@ -67,7 +67,7 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 16px 16px;
 }
 
 .section {
@@ -197,16 +197,17 @@ img {
 }
 
 .site-header--home .container {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .site-header--home nav {
   min-width: 0;
+  width: 100%;
 }
 
 .site-header--home .nav-links {
-  flex-wrap: nowrap;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 12px 20px;
 }
 
 .site-header--home .nav-links li {
@@ -215,8 +216,8 @@ img {
 
 .site-header--home .nav-links a {
   display: block;
-  padding: 0 14px;
-  white-space: nowrap;
+  padding: 4px 0;
+  white-space: normal;
 }
 
 .site-header--home .nav-links li:last-child {
@@ -224,7 +225,7 @@ img {
 }
 
 .site-header--home .nav-links .btn {
-  margin-left: 12px;
+  margin-left: 0;
   padding: 10px 20px;
 }
 
@@ -237,13 +238,16 @@ img {
 }
 
 .hero-inner {
-  display: flex;
+  
   align-items: center;
-  gap: 56px;
+  gap: 32px;
+  flex-direction: column;
 }
 
 .hero-text {
-  flex: 1;
+width: 100%;
+min-width: 0;
+
 }
 
 .hero-text .lead {
@@ -258,8 +262,8 @@ img {
 }
 
 .hero-media {
-  width: 600px;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .hero-image {
@@ -406,7 +410,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 28px;
 }
 
@@ -746,7 +750,7 @@ img {
   padding-top: 24px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-width: 1024px) {
   h1 {
     font-size: 40px;
   }
@@ -758,6 +762,7 @@ img {
   .section {
     padding: 64px 0;
   }
+  
 
   .feature-row {
     grid-template-columns: 1fr;
@@ -787,6 +792,7 @@ img {
   h1 {
     font-size: 34px;
   }
+  
 
   .card-grid {
     grid-template-columns: 1fr;
@@ -799,4 +805,13 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 600px){
+  .feature-row{
+    display: block;
+    width: 100%;
+    margin-bottom:  16px;
+  }
+
 }
