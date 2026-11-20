@@ -197,7 +197,7 @@ img {
 }
 
 .site-header--home .container {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .site-header--home nav {
@@ -238,10 +238,10 @@ img {
 }
 
 .hero-inner {
-  
+  display: flex;
   align-items: center;
   gap: 32px;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .hero-text {
@@ -272,6 +272,7 @@ min-width: 0;
   object-fit: cover;
   border-radius: var(--radius);
   display: block;
+  align-items: center;
 }
 
 /* Trust strip */
@@ -410,7 +411,7 @@ min-width: 0;
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
@@ -750,7 +751,7 @@ min-width: 0;
   padding-top: 24px;
 }
 
-@media (max-width: 768px), (max-width: 1024px) {
+@media (max-width: 768px) {
   h1 {
     font-size: 40px;
   }
@@ -762,7 +763,9 @@ min-width: 0;
   .section {
     padding: 64px 0;
   }
-  
+  .playbook-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .feature-row {
     grid-template-columns: 1fr;
@@ -788,11 +791,13 @@ min-width: 0;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   h1 {
     font-size: 34px;
   }
-  
+  .playbook-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   .card-grid {
     grid-template-columns: 1fr;
