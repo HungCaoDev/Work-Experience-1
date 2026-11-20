@@ -67,7 +67,7 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 16px 16px;
 }
 
 .section {
@@ -202,11 +202,12 @@ img {
 
 .site-header--home nav {
   min-width: 0;
+  width: 100%;
 }
 
 .site-header--home .nav-links {
-  flex-wrap: nowrap;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 12px 20px;
 }
 
 .site-header--home .nav-links li {
@@ -215,8 +216,8 @@ img {
 
 .site-header--home .nav-links a {
   display: block;
-  padding: 0 14px;
-  white-space: nowrap;
+  padding: 4px 0;
+  white-space: normal;
 }
 
 .site-header--home .nav-links li:last-child {
@@ -224,7 +225,7 @@ img {
 }
 
 .site-header--home .nav-links .btn {
-  margin-left: 12px;
+  margin-left: 0;
   padding: 10px 20px;
 }
 
@@ -239,11 +240,14 @@ img {
 .hero-inner {
   display: flex;
   align-items: center;
-  gap: 56px;
+  gap: 32px;
+  flex-direction: column-reverse;
 }
 
 .hero-text {
-  flex: 1;
+width: 100%;
+min-width: 0;
+
 }
 
 .hero-text .lead {
@@ -258,8 +262,8 @@ img {
 }
 
 .hero-media {
-  width: 600px;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .hero-image {
@@ -268,6 +272,7 @@ img {
   object-fit: cover;
   border-radius: var(--radius);
   display: block;
+  align-items: center;
 }
 
 /* Trust strip */
@@ -758,6 +763,9 @@ img {
   .section {
     padding: 64px 0;
   }
+  .playbook-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .feature-row {
     grid-template-columns: 1fr;
@@ -783,9 +791,12 @@ img {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   h1 {
     font-size: 34px;
+  }
+  .playbook-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .card-grid {
@@ -799,4 +810,13 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 600px){
+  .feature-row{
+    display: block;
+    width: 100%;
+    margin-bottom:  16px;
+  }
+
 }
