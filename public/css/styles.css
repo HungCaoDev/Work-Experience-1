@@ -751,7 +751,9 @@ min-width: 0;
   padding-top: 24px;
 }
 
-@media (max-width: 768px) {
+
+
+@media (max-width: 1024px) {
   h1 {
     font-size: 40px;
   }
@@ -763,9 +765,45 @@ min-width: 0;
   .section {
     padding: 64px 0;
   }
-  .playbook-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  .site-header--home .container {
+    flex-wrap: wrap;
   }
+
+  .site-header--home nav {
+    width: 100%;
+  }
+
+  .site-header--home .nav-links {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .site-header--home .nav-links a {
+    padding: 4px 0;
+  }
+
+  .site-header--home .nav-links .btn {
+    margin-left: 0;
+    padding: 10px 20px;
+  }
+
+  
+  .hero-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .hero-text {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-media {
+    width: 100%;
+    max-width: 600px;
+  }
+
 
   .feature-row {
     grid-template-columns: 1fr;
@@ -777,8 +815,9 @@ min-width: 0;
     order: 0;
   }
 
+  .playbook-grid,
   .card-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-layout {
@@ -791,16 +830,47 @@ min-width: 0;
   }
 }
 
-@media (max-width: 500px) {
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 48px 0 64px;
+  }
+
+  .hero-inner {
+    gap: 24px;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+@media (max-width: 600px) {
   h1 {
     font-size: 34px;
   }
-  .playbook-grid {
-    grid-template-columns: repeat(1, 1fr);
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
+  /* Stack cards vertically */
+  .playbook-grid,
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .feature-row {
+    grid-template-columns: minmax(0, 1fr);
+    margin-bottom: 32px;
+  }
+
+  
+  .site-header--home .nav-links a {
+    white-space: normal;
   }
 
   .cta-body {
@@ -812,11 +882,3 @@ min-width: 0;
   }
 }
 
-@media (max-width: 600px){
-  .feature-row{
-    display: block;
-    width: 100%;
-    margin-bottom:  16px;
-  }
-
-}
