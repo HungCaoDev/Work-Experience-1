@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Calico Media marketing site */
 
 :root {
@@ -424,7 +440,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
 }
 
@@ -764,6 +780,8 @@ img {
   padding-top: 24px;
 }
 
+
+/* New: homepage fixes for tablet and smaller */
 @media (max-width: 1024px) {
   .site-header--home .container {
     flex-wrap: wrap;
@@ -802,11 +820,9 @@ img {
     max-width: 600px;
   }
 
-  .playbook-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
+/* Existing: preserve original tablet styles */
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -844,11 +860,8 @@ img {
   }
 }
 
+/* New: homepage-specific mobile fixes */
 @media (max-width: 600px) {
-  .playbook-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .site-header--home .nav-links a {
     white-space: normal;
   }
@@ -859,6 +872,7 @@ img {
   }
 }
 
+/* Existing: preserve original small-mobile styles */
 @media (max-width: 480px) {
   h1 {
     font-size: 34px;
@@ -874,5 +888,11 @@ img {
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 332px) {
+  .playbook-grid,
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
